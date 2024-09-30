@@ -21,6 +21,7 @@
     "jsonwebtoken": "^9.0.2",
     "mqtt": "^5.1.4",
     "pg": "^8.11.3",
+    "railway": "^2.0.17",
     "sequelize": "^6.33.0"
   },
   "devDependencies": {
