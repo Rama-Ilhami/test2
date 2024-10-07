@@ -6,20 +6,21 @@ class kegiatanController{
         try{
             const kegiatans = await kegiatan.findAll({
             })
-            res.render('kegiatan.ejs',{kegiatans})
-            // res.status(200).json(kegiatans);
+            // res.render('kegiatan.ejs',{kegiatans})
+            res.status(200).json(kegiatans);
 
         }
         catch(err){
             res.status(500).json(err)
         }
         
+        
     }
     static async createKegiatan(req,res){
         try{
-            const {namaPanggilan, namaLengkap, password} = req.body
-            const result = await user.create({
-                namaPanggilan,namaLengkap,password
+            const {tanggal,tipe,shift,jam,namaMesin,namaSparepart,proses} = req.body
+            const result = await kegiatan.create({
+                tanggal,tipe,shift,jam,namaMesin,namaSparepart,proses
             })
             res.status(200).json(result)
         }
